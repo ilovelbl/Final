@@ -17,6 +17,9 @@ function setup() {
 //    loadJSON(url, jsonLoaded);
 //    console.log('setup complete');
 
+    platform = createSprite(400, 600);
+    platform.addAnimation("normal", "assets/grd.png");
+
     cowboy = createSprite(200,510);
     cowboy.addAnimation("nomal","assets/cb-s1.png", "assets/cb-s2.png");
     cowboy.addAnimation("stretch","assets/cb-jp1.png","assets/cb-jp1.png", "assets/cb-jp2.png", "assets/cb-jp2.png", "assets/cb-jp2.png", "assets/cb-jp2.png", "assets/cb-jp2.png", "assets/cb-jp2.png", "assets/cb-jp2.png", "assets/cb-jp2.png", "assets/cb-jp2.png", "assets/cb-jp2.png", "assets/cb-jp2.png", "assets/cb-jp2.png", "assets/cb-jp2.png", "assets/cb-jp2.png", "assets/cb-jp2.png", "assets/cb-jp2.png", "assets/cb-jp2.png", "assets/cb-jp2.png", "assets/cb-jp2.png", "assets/cb-jp2.png", "assets/cb-jp2.png", "assets/cb-jp2.png", "assets/cb-jp2.png", "assets/cb-jp2.png", "assets/cb-jp2.png");
@@ -31,9 +34,6 @@ function setup() {
     bullets = createSprite(900,500);
     bullets.addAnimation("shoot","assets/b1.png","assets/b2.png","assets/b3.png");
     bullets.addAnimation("boom","assets/b4.png");
-
-    platform = createSprite(400, 600);
-    platform.addAnimation("normal", "assets/grd.png");
 
     overCode = createSprite(450,150);
     overCode.addAnimation("over0","assets/d.png");
