@@ -20,14 +20,15 @@ function setup() {
     cowboy = createSprite(200,510);
     cowboy.addAnimation("nomal","assets/cb-s1.png", "assets/cb-s2.png");
     cowboy.addAnimation("stretch","assets/cb-jp1.png","assets/cb-jp1.png", "assets/cb-jp2.png", "assets/cb-jp2.png", "assets/cb-jp2.png", "assets/cb-jp2.png", "assets/cb-jp2.png", "assets/cb-jp2.png", "assets/cb-jp2.png", "assets/cb-jp2.png", "assets/cb-jp2.png", "assets/cb-jp2.png", "assets/cb-jp2.png", "assets/cb-jp2.png", "assets/cb-jp2.png", "assets/cb-jp2.png", "assets/cb-jp2.png", "assets/cb-jp2.png", "assets/cb-jp2.png", "assets/cb-jp2.png", "assets/cb-jp2.png", "assets/cb-jp2.png", "assets/cb-jp2.png", "assets/cb-jp2.png", "assets/cb-jp2.png", "assets/cb-jp2.png", "assets/cb-jp2.png");
-    cowboyDied = cowboy.addAnimation("died","assets/cb-die1.png","assets/cb-die2.png","assets/cb-die3.png","assets/cb-die4.png","assets/cb-die5.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png","assets/cb-die6.png");
+    cowboyDied = cowboy.addAnimation("died","assets/cb-die1.png","assets/cb-die2.png","assets/cb-die3.png","assets/cb-die4.png","assets/cb-die5.png","assets/cb-die6.png");
+    cowboyDied.looping =false;
     cowboy.addAnimation("asasa","assets/cb-die6.png");
 
     cowboy.setCollider("rectangle", 0,0,0,253);
 
 
-//    bullets = createSprite(800,random(550));
-    bullets = createSprite(800,500);
+//    bullets = createSprite(x+800,y);
+    bullets = createSprite(900,500);
     bullets.addAnimation("shoot","assets/b1.png","assets/b2.png","assets/b3.png");
     bullets.addAnimation("boom","assets/b4.png");
 
@@ -51,11 +52,10 @@ function draw() {
         cowboy.changeAnimation("nomal");
     }
 
-    bullets.setSpeed(7,180);
+    setTimeout(function(){bullets.setSpeed(7,180);},2000);
 
 //    for (var i = 0; i <= 10; i++){
-//        bullets = createSprite(x,y);
-//        x = 800;
+//        bullets = createSprite(900,y);
 //        y = random(500);
 //    }
 
@@ -65,8 +65,8 @@ function draw() {
             cowboy.changeAnimation("died");
             bullets.changeAnimation("boom");
             overCode.changeAnimation("over1");
-//            cowboy.animation.rewind();
         }
+
 //
     if(keyWentDown("z"))
         {
@@ -77,23 +77,26 @@ function draw() {
 
 
 
+//
+//        setInterval
+//        var intervalID = window.setInterval(myCallback, 500);
+//        bullets.position.x;
 
-            //setInterval
-            //var intervalID = window.setInterval(myCallback, 500);
-
-
-//    bullets.position.x
-
-
+//  var = function checkDying(){
+// //heck if cow
+//    if(cowboyDied.playing==false){
+//        setTimeout(cowboy.changeAnimation("asasa"),1000);
+//    }
+//}
 
 
     drawSprites();
 }
 
 ////setInterval function
-//function checkDying(){
+//  var = function checkDying(){
 // //heck if cow
 //    if(cowboyDied.playing==false){
-//        cowboy.changeAnimation("asasa");
+//        setTimeout(cowboy.changeAnimation("asasa"),5000);
 //    }
 //}
