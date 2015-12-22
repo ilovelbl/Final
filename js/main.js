@@ -44,7 +44,9 @@ function setup() {
 function draw() {
     background(185,200,200);
 
-    fill (200);
+    fill (250);
+    textAlign(CENTER);
+    text("To jump click Z", width/2, 20);
 
     cowboy.velocity.y += GRAVITY;
     if(cowboy.collide(platform)){
